@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>探照灯例子</title>
+<style>
+body {
+    font-size: 13px;
+    background-color: #000;
+}
+.demo {
+    -webkit-animation: demo-an2 5s ease-out infinite;
+    border-radius: .4em;
+    color: #FFFF;
+    margin: 1em;    
+    font-size:4em;
+    font-weight:bold;
+    text-align: center;
+    text-shadow: 1px 1px 0 #ccc;    
+    -webkit-mask: -webkit-linear-gradient(left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 20%) -500px 0 no-repeat content;
+    width: 16em;
+}
+@-webkit-keyframes demo-an {
+to {
+-webkit-mask-position:600px 0;
+}
+}
+</style>
+</head>
+<body>
+<div class="demo">腾讯财付通，会支付会生活</div>
+</body></html>
