@@ -42,22 +42,29 @@ console.log(change(arr))
 
 // fetch
 // axios timeout
-function request(api,timeout=5000){
-    let result = api
-    setTimeout(function(){
-        if(!result){
-            return Promise.reject("超时")
-        }
-    },timeout)
-    let mypromise = new Promise((resolve,reject)=>{
+function request(){
+    // let result = api
+    let mypromise1 = new Promise((resolve,reject)=>{
         setTimeout(function(){
             resolve("1")
-        },5000)
+        },1000)
     })
-    Promise.race([mypromise,api]).then(res=>{
+    let mypromise2 = new Promise((resolve,reject)=>{
+        setTimeout(function(){
+            resolve({
+                errorCode:'0',
+                data:{
+
+                }
+            })
+        },2000)
+    })
+    return Promise.race([mypromise1,mypromise2]).then(res=>{
+        console.log(res)
         
     })
 }
+console.log(request())
 
 // 函数柯里化
 function curry(func){
